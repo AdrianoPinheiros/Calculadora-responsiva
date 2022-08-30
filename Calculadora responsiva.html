@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Calculadora</title>
+
+    <style>
+
+html{
+    font-size: 62,5%;
+}        
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    
+   
+}
+
+
+.num{
+    width: 20%;
+    height: 10vh;
+    
+}
+
+.result{
+    background-color: #ff6d00;
+    width: 55%;
+    height: 5vh;
+    border-radius: 5px; 
+    letter-spacing: 5px; 
+    text-align: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.apagar{
+    background-color: #ff6d00;
+    width: 15%;
+    height: 5vh;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+
+
+input{
+    color: #fff;
+    padding: 2.5%;;
+    outline: none;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+}
+
+.main{
+    display:block;
+    width: 50%;
+    height: 50%;
+    
+    /* grid-template-columns: repeat(4,1fr);
+    max-width:600px;
+    margin: 0 auto; */
+}
+
+.maincolor{
+    background-color: black;
+    
+}
+
+.blue{
+    background-color: #0cd0cd;
+}
+
+.pin{
+    background-color: #cf1f96;
+}
+
+.gree{
+    background-color: #aad800;
+}
+
+.pur{
+    background-color: #8c52ff;
+}
+
+.ora{
+    background-color: #fcd770;
+}
+
+
+
+
+/* Aqui termina comaça a parte automatica 
+
+@media (max-width:540px){
+    
+ 
+    .num{
+        width: 130px;       
+        height: 130px;      
+    }
+    
+    .text{
+        width: 365px;  
+        height: 85px;  
+       
+    }
+    
+    .text1{
+        width: 85px;  
+        height: 85px; 
+    }
+     
+       
+    }
+     
+    
+   
+    
+    @media (max-width:414px){
+    
+ 
+        .num{
+            width: 100px;      
+            height: 175px;      
+        }
+        
+        .text{
+            width: 270px;   
+            height: 105px;  
+           
+        }
+        
+        .text1{
+            width: 60px; 
+            height: 105px; 
+        }
+         
+           
+        }
+    
+    
+    
+    
+    
+    @media (max-width:412px){
+    
+ 
+        .num{
+            width: 100px;     
+            height: 175px;   
+        }
+        
+        .text{
+            width: 270px;   
+            height: 120px;   
+           
+        }
+        
+        .text1{
+            width: 60px;  
+            height: 120px;
+        }
+         
+           
+        }
+
+
+        
+
+        @media (max-width:393px){
+    
+ 
+            .num{
+                width: 95px;      
+                height: 160px;    
+            }
+            
+            .text{
+                width: 255px;  
+                height: 105px;   
+               
+            }
+            
+            .text1{
+                width: 55px;  
+                height: 105px; 
+            }
+             
+               
+            }
+    
+     
+
+     @media (max-width:390px){
+    
+ 
+        .num{
+            width: 92px;       
+            height: 165px;      
+        }
+        
+        .text{
+            width: 250px;   
+            height: 100px;   
+           
+        }
+        
+        .text1{
+            width: 50px;  
+            height: 100px; 
+        }
+         
+           
+        }
+
+ 
+
+ @media (max-width:375px){
+    
+ 
+    .num{
+        width: 90px;       
+        height: 135px;      
+    }
+    
+    .text{
+        width: 240px;   
+        height: 90px;   
+    }
+    
+    .text1{
+        width: 50px;  
+        height: 90px; 
+     
+       
+    }
+}
+
+
+
+
+
+@media (max-width:360px){
+    
+ 
+    .num{
+        width: 85px;       
+        height: 135px;      
+    }
+    
+    .text{
+        width: 225px;   
+        height: 90px;   
+       
+    }
+    
+    .text1{
+        width: 50px;  
+        height: 90px; 
+    }
+     
+       
+    }
+
+
+
+@media (max-width:280px){
+    
+ 
+    .num{
+        width: 65px;      
+        height: 125px;      
+    }
+    
+    .text{
+        width: 165px;   
+        height: 80px;   
+       
+    }
+    
+    .text1{
+        width: 30px;  
+        height: 80px; 
+    }
+     
+       
+    } 
+
+*/
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="" name="calculator">
+            <input type="text"   class="result"          name="text1"  disabled>
+            <input type="text"   class="apagar"         name="text12" value="C"   onclick="location.reload()"><br>
+
+            <input type="button" class="num maincolor"  name="btn7"   value ="7"  onclick="displaynum(btn7.value)">
+            <input type="button" class="num maincolor"  name="btn8"   value ="8"  onclick="displaynum(btn8.value)">
+            <input type="button" class="num maincolor"  name="btn9"   value ="9"  onclick="displaynum(btn9.value)">
+            <input type="button" class="num blue"       name="addbtn" value ="+"  onclick="displaynum(addbtn.value)">
+
+            <input type="button" class="num maincolor"  name="btn4"   value ="4"  onclick="displaynum(btn4.value)">
+            <input type="button" class="num maincolor"  name="btn5"   value ="5"  onclick="displaynum(btn5.value)">
+            <input type="button" class="num maincolor"  name="btn6"   value ="6"  onclick="displaynum(btn6.value)">
+            <input type="button" class="num pin"        name="subbtn" value ="-"  onclick="displaynum(subbtn.value)">
+
+            <input type="button" class="num maincolor"  name="btn1"   value ="1"  onclick="displaynum(btn1.value)">
+            <input type="button" class="num maincolor"  name="btn2"   value ="2"  onclick="displaynum(btn2.value)">
+            <input type="button" class="num maincolor"  name="btn3"   value ="3"  onclick="displaynum(btn3.value)">
+            <input type="button" class="num gree"       name="mulbtn" value ="*"  onclick="displaynum(mulbtn.value)">
+
+            <input type="button" class="num maincolor"  name="dot"    value ="."  onclick="displaynum(dot.value)">
+            <input type="button" class="num maincolor"  name="btn0"   value ="0"  onclick="displaynum(btn0.value)">
+            <input type="button" class="num pur"        name="eqlbtn" value ="="  onclick="text1.value=eval(text1.value)">
+            <input type="button" class="num ora"        name="divbtn" value ="/"  onclick="displaynum(divbtn.value)">
+
+        </form>
+    </div>   
+
+    <script>
+        function displaynum(n1){
+            calculator.text1.value = calculator.text1.value + n1;
+}
+    </script>
+</body>
+</html>
